@@ -65,6 +65,9 @@ def main():
         for ppl in contact_list:
             new_cl.append(ppl.split(','))
         del new_cl[-1]
+        for i in range(len(new_cl)):
+            if len(new_cl[i]) > 7:
+                del new_cl[i][-1]
         # Data merge
         resolved = double_killing(new_cl)
         # Writing to new file
